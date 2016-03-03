@@ -42,19 +42,21 @@ Installation and Usage
    * Find the file q-external-users.php within this folder, and open it in a text editor.
    * Replace the entire contents of this file with the following code:
 
-    <?php
-    //Find the Joomla path (if Q2A is installed correctly in subdirectory of Joomla, Joomla's root directory should be a level above the parent of the current folder).
-    $joomlaPath = dirname(dirname(__DIR__));
-    if (!file_exists($joomlaPath.'/configuration.php')) {
-        exit("Could not find Joomla root directory.");
-    }
-    //Find the Joomla plugin
-    $pluginPath = $joomlaPath.'/plugins/q2a/qaintegration';
-    if (!file_exists($pluginPath.'/qaintegration.php')) {
-        exit("Could not find Joomla qaintegration plugin.");
-    }
-    //Include the 
-    require ($pluginPath.'/qa-external/qa-external-users.php');
+```
+<?php
+//Find the Joomla path (if Q2A is installed correctly in subdirectory of Joomla, Joomla's root directory should be a level above the parent of the current folder).
+$joomlaPath = dirname(dirname(__DIR__));
+if (!file_exists($joomlaPath.'/configuration.php')) {
+    exit("Could not find Joomla root directory.");
+}
+//Find the Joomla plugin
+$pluginPath = $joomlaPath.'/plugins/q2a/qaintegration';
+if (!file_exists($pluginPath.'/qaintegration.php')) {
+    exit("Could not find Joomla qaintegration plugin.");
+}
+//Include the 
+require ($pluginPath.'/qa-external/qa-external-users.php');
+```
 
 5. You should now be able to run Question2Answer's installation script by going to its URL in your browser.
 
