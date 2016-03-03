@@ -90,7 +90,7 @@ Todo
 
 * Make it translatable (low impact, since there are no user-facing strings, just admin).
 * Improve the group name display (and make it optional in config)
-* Add config options for the remaining hard-coded stuff (login and other urls, etc).
+* Any other config options to add?
 * Allow Q2A to inherit Joomla's database credentials rather than needing to set them in Q2A config manually (however, this will need core patches to Q2A rather than work in this plugin)
 * Allow integration to work with Q2A on a different subdomain (will probably need to use Joomla's XMLRPC API instead of direct calls)
 * Write a search plugin for Joomla to allow us to include Q2A search results in the main Joomla search.

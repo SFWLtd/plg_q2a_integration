@@ -22,6 +22,14 @@ class PlgQ2aQaintegration extends JPlugin
 {
     private static $parentIDs = []; //static so we don't have to keep going back to the DB if we want to check have multiple users from the same group.
     /**
+     * Return the URLs specified in config.
+     */
+    public function onGetURLs()
+    {
+        return $this->getURLParams();
+    }
+
+    /**
      * Return the access levels available to the user, as defined by the plugin config.
      */
     public function onQnaAccess($user)
@@ -118,6 +126,16 @@ class PlgQ2aQaintegration extends JPlugin
             'mod'  => $this->params->get('mod_q2a'),
             'admin'=> $this->params->get('admin_q2a'),
             'super'=> $this->params->get('super_q2a'),
+        ];
+    }
+
+    private function getURLParams()
+    {
+        return [
+            'login'  => $this->params->get('login_url'),
+            'logout' => $this->params->get('logout_url'),
+            'reg'    => $this->params->get('reg_url'),
+            'denied' => $this->params->get('denied_url'),
         ];
     }
 }

@@ -23,28 +23,30 @@ function qa_get_mysql_user_column_type()
 
 function qa_get_login_links($relative_url_prefix, $redirect_back_to_url)
 {
+    $config_urls = q2a_GetURLs();
     return array(
-        'login' => $relative_url_prefix.'../login.html',
-        'register' => $relative_url_prefix.'../login.html',      //no end-user registration on this site.
-        'logout' => $relative_url_prefix.'../logout.html',
+        'login'     => $config_urls['login'],
+        'register'  => $config_urls['reg'],
+        'logout'    => $config_urls['logout']
     );
 }
 
 function qa_get_logged_in_user()
 {
-    qa_get_joomla_app();    // Now you can use all classes of Joomla
+    qa_get_joomla_app();    // Now we can use all classes of Joomla
     $user = JFactory::getUser();
+    $config_urls = q2a_GetURLs();
     
     if($user) {
       if($user->guest || $user->block) {
-        header('location:/q-and-a-info.html');
+        header('location:'.$config_urls['denied']);
         die;
       }
 
       $access = q2a_QnaAccessEvent($user);
 
       if(!$access['view']) {     //must be in a group that has the view level set at least.
-        header('location:/q-and-a-info.html');
+        header('location:'.$config_urls['denied']);
         die;
       }
       $level = QA_USER_LEVEL_BASIC;
@@ -163,6 +165,10 @@ function q2a_QnaAccessEvent($user)
 function q2a_TeamGroupEvent($user)
 {
     return array_pop(q2a_TriggerJoomlaEvent('onTeamGroup', [$user]));
+}
+function q2a_GetURLs()
+{
+    return array_pop(q2a_TriggerJoomlaEvent('onGetURLs', []));
 }
 
 function q2a_TriggerJoomlaEvent($event, $args)
