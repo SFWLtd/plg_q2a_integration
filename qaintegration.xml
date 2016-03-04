@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="1.0.0" type="plugin" group="q2a">
-    <name>Question2Answer Integration</name>
+    <name>PLG_Q2A_QAINTEGRATION_NAME</name>
     <author>SFW Ltd</author>
-    <creationDate>2016-03-03</creationDate>
+    <creationDate>2016-03-04</creationDate>
     <copyright>Copyright (C) 2016 SFW Ltd.</copyright>
     <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
     <authorEmail>simonc@sfwltd.co.uk</authorEmail>
     <authorUrl>http://www.sfwltd.co.uk/</authorUrl>
     <version>1.0.0</version>
-    <releaseDate>2016-03-03</releaseDate>
+    <releaseDate>2016-03-04</releaseDate>
     <releaseType>Stable Release</releaseType>
-    <description>Integration for Question2Answer</description>
+    <description>PLG_Q2A_QAINTEGRATION_DESCRIPTION</description>
     <files>
         <filename>index.html</filename>
         <filename plugin="qaintegration">qaintegration.php</filename>
         <filename>qa-external/qa-external-users.php</filename>
     </files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_q2a_qaintegration.sys.ini</language>
+	</languages>
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="view_q2a"  type="accesslevel" label="Access for viewing Q2A" />
-                <field name="post_q2a"  type="accesslevel" label="Access for posting to Q2A" />
-                <field name="edit_q2a"  type="accesslevel" label="Access for editing Q2A" />
-                <field name="mod_q2a"   type="accesslevel" label="Access for moderating Q2A" />
-                <field name="admin_q2a" type="accesslevel" label="Access for admin Q2A" />
-                <field name="super_q2a" type="accesslevel" label="Access for superuser in Q2A" />
+                <field name="view_q2a"  type="accesslevel" label="PLG_Q2A_QAINTEGRATION_VIEWPERM_LABEL"  description="PLG_Q2A_QAINTEGRATION_VIEWPERM_DESC" />
+                <field name="post_q2a"  type="accesslevel" label="PLG_Q2A_QAINTEGRATION_POSTPERM_LABEL"  description="PLG_Q2A_QAINTEGRATION_POSTPERM_DESC" />
+                <field name="edit_q2a"  type="accesslevel" label="PLG_Q2A_QAINTEGRATION_EDITPERM_LABEL"  description="PLG_Q2A_QAINTEGRATION_EDITPERM_DESC" />
+                <field name="mod_q2a"   type="accesslevel" label="PLG_Q2A_QAINTEGRATION_MODPERM_LABEL"   description="PLG_Q2A_QAINTEGRATION_MODPERM_DESC" />
+                <field name="admin_q2a" type="accesslevel" label="PLG_Q2A_QAINTEGRATION_ADMINPERM_LABEL" description="PLG_Q2A_QAINTEGRATION_ADMINPERM_DESC" />
+                <field name="super_q2a" type="accesslevel" label="PLG_Q2A_QAINTEGRATION_SUPERPERM_LABEL" description="PLG_Q2A_QAINTEGRATION_SUPERPERM_DESC" />
             </fieldset>
             <fieldset name="advanced">
-                <field name="urls_info" type="spacer" class="text" label="The following URLs are used for links and redirects by Q2A or by this plugin. They should all exist as valid pages within Joomla." />
-                <field name="login_url"  type="text" label="Login URL" default="/login.html" />
-                <field name="logout_url" type="text" label="Logout URL" default="/logout.html" />
-                <field name="reg_url"    type="text" label="Registration URL" default="/register.html" />
-                <field name="denied_url" type="text" label="Redirect when denied access" default="/" />
+                <field name="urls_info" type="spacer" class="text" label="PLG_Q2A_QAINTEGRATION_URLSINFO_LABEL" />
+                <field name="login_url"  type="text" label="PLG_Q2A_QAINTEGRATION_LOGINURL_LABEL"  description="PLG_Q2A_QAINTEGRATION_LOGINURL_DESC"  default="/login.html" />
+                <field name="logout_url" type="text" label="PLG_Q2A_QAINTEGRATION_LOGOUTURL_LABEL" description="PLG_Q2A_QAINTEGRATION_LOGOUTURL_DESC" default="/logout.html" />
+                <field name="reg_url"    type="text" label="PLG_Q2A_QAINTEGRATION_REGURL_LABEL"    description="PLG_Q2A_QAINTEGRATION_REGURL_DESC"    default="/register.html" />
+                <field name="denied_url" type="text" label="PLG_Q2A_QAINTEGRATION_DENIEDURL_LABEL" description="PLG_Q2A_QAINTEGRATION_DENIEDURL_DESC" default="/" />
             </fieldset>
         </fields>
     </config>
