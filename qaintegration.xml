@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="1.0.0" type="plugin" group="q2a">
+<extension version="3.4" type="plugin" group="q2a" method="upgrade">
     <name>PLG_Q2A_QAINTEGRATION_NAME</name>
     <author>SFW Ltd</author>
     <creationDate>2016-03-04</creationDate>
